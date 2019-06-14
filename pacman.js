@@ -89,8 +89,10 @@ function eatPowerPellet() {
   } else {
     console.log('\nPOWER UP!');
     score += 50;
-    ghosts.edible = true;
     powerPellets--;
+    for (i = 0; i < ghosts.length; i++) {
+      ghosts[i].edible = true;
+    };
   };
 }
 
@@ -99,7 +101,11 @@ function eatGhost(ghost) {
     console.log(`\nGot by ${ghost.name} the ${ghost.colour} ghost!\nBwa! Bwa! Bwa!`);
     lives--;
     gameOver();
-  };
+  } else if (ghost.edible == true) {
+    console.log(`\n${ghost.name} was delicious waka waka.`);
+    score += 200;
+    ghost.edible = false;
+  }
 }
 
 function gameOver() {

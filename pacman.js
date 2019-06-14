@@ -63,11 +63,27 @@ function displayMenu() {
   console.log('(d) Eat Dot');
   if (powerPellets != 0){
     console.log('(p) Eat Power-Pellet');
+  };
+  if (inky.edible == true) {
+    console.log('(1) Eat Inky (edible)');
+  } else {
+    console.log('(1) Eat Inky (inedible)');
+  };
+  if (blinky.edible == true) {
+    console.log('(2) Eat Blinky (edible)');
+  } else {
+    console.log('(2) Eat Blinky (inedible)');
+  };
+  if (pinky.edible == true) {
+    console.log('(3) Eat Pinky (edible)');
+  } else {
+    console.log('(3) Eat Pinky (inedible)');
   }
-  console.log('(1) Eat Inky');
-  console.log('(2) Eat Blinky');
-  console.log('(3) Eat Pinky');
-  console.log('(4) Eat Clyde');
+  if (clyde.edible == true) {
+    console.log('(4) Eat Clyde (edible)');
+  } else {
+    console.log('(4) Eat Clyde (inedible)');
+  }
   console.log('(q) Quit');
 }
 
